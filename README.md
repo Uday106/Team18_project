@@ -14,6 +14,8 @@ Technologies used for this project:
 * JavaScript
 * Bootstrap 
 * ...
+## Name
+Jimun Jang
 
 ## Name
 Uday Sahota
