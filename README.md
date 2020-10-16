@@ -3,6 +3,7 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
+* [Name](#name)
 
 ## General Info
 This browser based web application to ...
@@ -13,7 +14,10 @@ Technologies used for this project:
 * JavaScript
 * Bootstrap 
 * ...
-	
+
+## Name
+Uday Sahota
+
 ## Content
 Content of the project folder:
 
@@ -34,6 +38,7 @@ It has the following subfolders and files:
 
 Firebase hosting files: 
 ├── .firebaserc...
+
 
 
 ```
