@@ -3,6 +3,8 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
+* [Name](#Myname)
+* [File](#Filename)
 
 ## General Info
 This browser based web application to ...
@@ -42,3 +44,8 @@ Tips for file naming files and folders:
 * use lowercase with no spaces
 * use dashes (not underscore) for word separation
 
+## Name
+Angus Zhan
+
+## File
+File name: counter.html
