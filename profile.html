@@ -36,7 +36,8 @@
   .no { grid-area: 2 / 1 / 3 / 2; }
   
   .past { grid-area: past;
-padding-left: 30px; }
+padding-left: 30px;
+padding-bottom: 5%; }
   
   .n {
     display: grid;
@@ -71,11 +72,41 @@ padding-left: 30px; }
     background-image: linear-gradient(rgba(0,0,0,0.7),
     rgba(0,0,0,0.7)), url(../images/background.jpg);
     background-position: center;
-    background-size: cover;
+    background-size: cover;}
     
-    
-   
+  .navbar {
+    height: 12%;
+    display: flex;
+    align-items: center;
 }
+
+.logo {
+    width: 50px;
+    cursor: pointer;
+}
+
+.menu-icon {
+    width: 30px;
+    cursor: pointer;
+    margin-left: 40px;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+   
+
    </style>
 
 
@@ -89,10 +120,18 @@ padding-left: 30px; }
 <body class="container">
 
     <div>
-    <nav class="navbar sticky-top navbar-light" style="background-color: rgba(56, 74, 74, 0.591);">
-        <a class="navbar-brand"><b> Account</b></a>
+      <div class="navbar">
+        <img src="images/logo.png" class="logo">
+        <h2 style="padding-left: 40%;">Account</h2>
+        <nav>
+            <ul>
+                <li><a href="main.html">Home</a></li>
+             
+                <li><a href="">About</a></li>
+            </ul>
+        </nav>
         <img src="images/menu.png" class="menu-icon">
-      </nav>
+    </div>
 </div>
 <div class="card">
     <h2 class="card-body">
