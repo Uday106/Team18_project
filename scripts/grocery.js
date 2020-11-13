@@ -1,32 +1,47 @@
-const cafeList = document.querySelector('#cafe-list');
+const groceryList = document.querySelector('.grid-container');
 
-// create element & render cafe
+// create element and render cafe
 function renderCafe(doc){
-    let li = document.createElement('li');
-    let name = document.createElement('span');
-    let location = document.createElement('span');
+    let card = document.createElement('div');
+    let name = document.createElement('p');
+    let location = document.createElement('p');
+    let reserve = document.createElement('a');
 
-    li.setAttribute('data-id', doc.id);
+
+    card.setAttribute('data-id', doc.id);
+    reserve.setAttribute('href', '');
     name.textContent = doc.data().name;
     location.textContent = doc.data().location;
+    reserve.textContent = 'reserve';
 
-    li.appendChild(name);
-    li.appendChild(location);
+    card.appendChild(name);
+    card.appendChild(location);
+    card.appendChild(reserve);
+    groceryList.appendChild(card);
 
-    cafeList.appendChild(li);
-}
 
-// getting data
-var docRef = db.collection("Grocery Store").doc("01");
 
-docRef.get().then(function(doc) {
-    if (doc.exists) {
-        console.log("Document data:", doc.data());
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-    }
-}).catch(function(error) {
-    console.log("Error getting document:", error);
+    reserve.addEventListener('click', (e) => {
+        e.preventDefault();
+        let id = e.target.parentElement.getAttribute('data-id');
+        console.log(id);
+        console.log(db.collection('Grocery Store').doc(id).collection('reservation').doc('am1'));
+        db.collection('Grocery Store').doc(id).collection('reservation').doc('am1').update({
+            'taken': true
+        });
+    })
+};
+
+
+db.collection('Grocery Store').get().then((snap) => {
+    snap.docs.forEach((doc) => {
+        renderCafe(doc);
+    })
 });
+
+
+
+
+
+
 
