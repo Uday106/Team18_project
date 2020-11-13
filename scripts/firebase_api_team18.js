@@ -6,7 +6,8 @@ var firebaseConfig = {
     projectId: "comp1800-team-project",
     storageBucket: "comp1800-team-project.appspot.com",
     messagingSenderId: "1084725445646",
-    appId: "1:1084725445646:web:67fc41cd65a0355049285f"
+    appId: "1:1084725445646:web:67fc41cd65a0355049285f",
+    measurementId: "G-Y378TTCNE9"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
