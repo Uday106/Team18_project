@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/grocery.css">
+    
+
+    <!-- hook up with firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+
+    <title>Team 18 Project</title>
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="images/logo.png" alt="">
+        <nav>
+            <ul class="nav_links">
+                <button id="home">Home</button>
+                <button id="profile">Profile</button>
+                <button id="logout">Log out</button>
+            </ul>
+        </nav>
+    </header>
+
+    <!--------------------------------mobile version------------------------------------>
+    <div class="menu-container">
+        <img onclick="openNav()" class="menu" src="images/hamburger.png" alt="">
+    </div>
+    <div id="mobile_menu" class="overlay">
+        <button class="close" onclick="closeNav()">&times;</button>
+        <div id="mobile_menu" class="overlay_content">
+            <div id="home2">Home</div>
+            <div id="profile2">Profile</div>
+            <div id="logout2">Log out</div>
+        </div>
+    </div>
+    <!---------------------------------------------------------------------------------->
+
+    <div class="img-container">
+        <h2>Skip The Line</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet aspernatur earum odio, laborum praesentium
+            sed,
+            obcaecati reiciendis distinctio molestias debitis veniam minus ducimus facere aut natus non vitae? Qui,
+            corporis.
+        </p>
+    </div>
+    <div class="container">
+        <div id="left">
+            <form id="search">
+                <img id="mag" src="images/search.png" alt="">
+                <input type="text" name="search" placeholder="search...">
+            </form>
+            <button id="Chinese">Chinese</button>
+            <button id="Seafood">Seafood</button>
+            <button id="Fast Foods">Fast Foods</button>
+        </div>
+        <div id="right">
+            <h2>Grocery Shops</h2>
+            <hr>
+            <!-- working on this -->
+            <!-- <div id="body">
+                <div class="wrapper">
+                    <div class="carousel">
+                        <button id="prev"> < </button>
+                        <div class="card card-1 active">A</div>
+                        <div class="card card-2">B</div>
+                        <div class="card card-3">C</div>
+                        <div class="card card-4">D</div>
+                        <div class="card card-5">E</div>   
+                        <button id="next"> > </button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+
+    <script src="scripts/firebaseLoad.js"></script>
+    <script src="scripts/restaurants_groceries.js"></script>
+    <script src="scripts/groceries.js"></script>
+</body>
+
+</html>

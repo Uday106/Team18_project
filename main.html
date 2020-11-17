@@ -1,52 +1,45 @@
-<!--landing page without login button-->
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>My BCIT Project</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
-    <link rel="stylesheet" href="styles/landing.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/main.css">
 
+    <!-- hook up with firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+
+
+    <title>Team 18 Project</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="navbar">
-            <img src="images/logo.png" class="logo">
-            <nav>
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="">About</a></li>
-                </ul>
-            </nav>
-            <img src="images/menu.png" class="menu-icon">
-        </div>
-        <div class="grid-container">
-            <div class="top">
-                <h1>Skip The Line </h1>
-                
-                <h2 style="text-align: center;">Choose one of the 2:</h2>
-                
+    <div id="profile-container">
+        <img src="images/profile.png" alt="" id="profile-img">
+    </div>
+    <div id="container">
+        <div class="card-container">
+            <div class="card-left">
+                <h1>Restaurant</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem,
+                </p>
+                <button id="toRestaurants">Reservation</button>
             </div>
-            <div class="bottom">
-                <a href="list_of_restaurants.html" class="card card1">
-                    <h3>Restaurants</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi animi quos distinctio amet et sit
-                        omnis sed, odio quas doloribus.</p>
-                </a>
-                <a href="list_of_groceryShops.html" class="card card2">
-                    <h3>Grocery Shops</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi animi quos distinctio amet et sit
-                        omnis sed, odio quas doloribus.</p>
-                </a>
+            <div class="card-right">
+                <h1>Grocery Shops</h1>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem,
+                </p>
+                <button id="toGroceries">Reservation</button>
             </div>
         </div>
     </div>
-    
+
+    <script src="scripts/firebaseLoad.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 
 </html>

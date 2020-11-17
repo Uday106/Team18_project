@@ -1,0 +1,290 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    width: 130px;
+    height: 50px;
+}
+
+.menu {
+    width: 50px;
+    height: 40px;
+    position: absolute;
+    right: 10%;
+    top: 4%;
+    cursor: pointer;
+    transition: transform 0.5s;
+    display: none;
+}
+
+.menu:hover {
+    transform: translateY(-5px);
+}
+
+li, a {
+    font-size: 16px;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+button {
+    margin-left: 20px;
+}
+
+#profile {
+    padding: 9px 25px;
+    background-color: white;
+    border: 1px solid #BC4749;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: black;
+    font-size: 14px;
+}
+
+#home {
+    padding: 9px 25px;
+    background-color: white;
+    border: 1px solid #BC4749;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: black;
+    font-size: 14px;
+}
+
+#logout {
+    padding: 9px 25px;
+    background-color: #BC4749;
+    border: 1px solid #BC4749;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: white;
+    font-size: 14px;
+}
+
+
+
+button:hover {
+	transform: translateY(-5px);
+}
+
+button:active {
+	transform: scale(0.90);
+}
+
+button:focus {
+	outline: none;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    background: #A7C957;
+	background: linear-gradient(to right, #A7C950, #A7C957) no-repeat 0 0 / cover;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    transition: all 0.8s ease 0s;
+}
+
+.overlay_content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay_content div {
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #386641;
+    font-size: 15px;
+    transition: all 0.5s ease 0s;
+    cursor: pointer;
+}
+
+.overlay_content div:nth-child(1) {
+    border-top: 1px solid #386641;
+}
+
+.overlay_content div:hover {
+    transform: translateY(-5px);
+}
+
+.overlay .close {
+    background-color: #A7C957;
+    border: none;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.img-container h2 {
+    margin-bottom: 30px;
+}
+
+.img-container p {
+    width: 50%;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+.container h2 {
+    margin: 10px 20px;
+    text-align: left;
+}
+hr {
+    width: 95%;   
+}
+
+#mag {
+    width: 28px;
+    height: 28px;
+    transform: translateY(9px);
+}
+
+#search {
+    margin-top: 50px;
+    text-align: center;
+    width: 100%;
+    transform: translateY(-34px);
+}
+#search input {
+    border: none;
+    outline: none;
+    width: 70%;
+    border-bottom: 1px solid grey;
+    margin-left: 1px;
+    padding: 1%;
+}
+
+#search input:focus {
+    border-bottom: 2px solid #BC4749;
+}
+
+#search input:active {
+	transform: scale(0.90);
+}
+
+#left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#left button {
+    margin-bottom: 10%;
+    cursor: pointer;
+    transition: transform 0.5s;
+    padding: 0px 50px;
+    border: none;
+    outline: none;
+    background-color: white;
+    font-family: Times;
+    font-size: 1.2em;
+}
+
+#left button:hover {
+    transform: translateY(-10px);
+}
+
+#left button:focus {
+    border-bottom: 1px solid #BC4749;
+}
+
+
+
+.wrapper .carousel {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel .card {
+    line-height: 250px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    color: #fff;
+    font-size: 75px;
+    font-weight: bold;
+    margin: 20px 0;
+    font-weight: 600;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+.carousel .card-1 {
+    background-color: #ed1c24;
+}
+
+.carousel .card-2 {
+    background-color: #0072bc;
+}
+
+.carousel .card-3 {
+    background-color: #39b54a;
+}
+
+.carousel .card-4 {
+    background-color: #f26522;
+}
+
+.carousel .card-5 {
+    background-color: #630460;
+}
+
+
+#prev, #next {
+    outline: none;
+    border: none;
+    background-color: #BC4749;
+    padding: 10px 14px;
+    border-radius: 100px;
+    font-weight: 300;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.5s;
+    position: absolute;
+}
+
+#next {
+    top: 50%;
+    right: 5%;
+}
+
+#prev {
+    top: 50%;
+    left: 5%;
+}
+
+#buttons button:active {
+    transform: scale(0.9);
+}
+
+@media only screen and (max-width: 800px) {
+    ul {display: none;}
+    .menu { display: initial; }
+}

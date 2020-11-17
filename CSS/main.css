@@ -1,0 +1,100 @@
+* { box-sizing: border-box; }
+
+body {
+	background: #f6f5f7;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: -80px 0 50px;
+}
+
+#profile-img {
+    position: relative;
+    border-radius: 50px;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    z-index: 2;
+}
+
+#container {
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 
+	0 10px 10px rgba(0, 0, 0, 0.25);
+    position: relative;
+	width: 768px;
+	max-width: 80%;
+    min-height: 480px;
+    z-index: 1;
+}
+
+.card-left, .card-right {
+	position: absolute;
+	top: 0;
+    height: 100%;
+    display: flex;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.card-left {
+    background: #A7C957;
+	background: linear-gradient(to right, #A7C950, #A7C957) no-repeat 0 0 / cover;
+    background-position: center;
+    background-size: cover;
+	left: 0;
+    width: 50%;
+    color: white;
+}
+
+.card-right {
+	right: 0;
+	width: 50%;
+}
+
+button {
+	border-radius: 20px;
+	border: 1px solid #BC4749;
+	background-color: #BC4749;
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 10%;
+	margin: 10px 0;
+	letter-spacing: 1px;
+    transition: transform 0.5s;
+	margin: 60px 5px;
+	cursor: pointer;
+}
+
+button:hover {
+	transform: translateY(-5px);
+}
+
+button:active {
+	transform: scale(0.90);
+}
+
+button:focus {
+	outline: none;
+}
+
+p {
+	margin-bottom: -25px;
+}
+@media only screen and (max-width: 800px) {
+	h1 {font-size: 1.5em;}
+}
+
+/* iphone 5/SE height is 568 */
+@media only screen and (max-height: 568px) {
+	img {display: none;}
+	body {margin: 0;}
+}

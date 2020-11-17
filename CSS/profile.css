@@ -1,0 +1,196 @@
+* {box-sizing: border-box;}
+
+.name {
+    font-size: 36px;
+    text-align: center;
+    margin: 20px 20px;
+}
+
+#buttons ul {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#buttons ul li {
+    padding: 10px 20px;
+    border-bottom: 1px solid grey;
+    list-style: none;
+    margin: 10px;
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+
+#buttons ul li:hover {
+    transform: translateY(-5px);
+    border-bottom: 1px solid #BC4749;
+}
+
+#aboutMe {
+    display: flex;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#aboutMe input, #aboutMe label {
+    margin-top: 20px;
+}
+
+#aboutMe input {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #BC4749;
+    padding: 0 20px;
+}
+
+#reservations {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    display: none;
+}
+
+#saveChanges {
+    padding: 9px 20px;
+    background-color: #BC4749;
+    border: 1px solid #BC4749;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: white;
+    font-size: 14px;
+    margin-top: 50px;
+    margin-left: 5px;
+}
+
+input {
+    font-size: 16px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+#pop-up-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,1);
+    opacity: 0.2;
+    width: 100%;
+    height: 100vh;
+    /* display: none; */
+}
+
+#pop-up-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+
+#pop-up-menu {
+    background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 
+	0 10px 10px rgba(0, 0, 0, 0.25);
+	position: relative;
+    overflow: scroll;
+    width: 480px;
+    max-width: 80%;
+    height: 600px;
+}
+
+#authentication-form {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+
+#authentication-form label {
+    font-size: 20px;
+    font-weight: bold;
+    color: #BC4749;
+}
+#authentication-form input {
+	border:none;
+  	outline: none;
+	background: none;
+	padding: 12px 15px;
+	margin: -10px 10px 25px 10px;
+	width: 60%;
+	border-bottom: 1px solid #bbc2bc;
+}
+
+#authentication-form input:focus {
+	border-bottom: 2px solid #BC4749;
+}
+
+#verify, #ok {
+    padding: 9px 20px;
+    background-color: #BC4749;
+    border: 1px solid #BC4749;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: white;
+    font-size: 14px;
+    margin-top: 25px;
+    margin-left: 5px;
+}
+
+#authentication-form p {
+    margin-bottom: 70px;
+    padding: 0 10px;
+}
+
+#cross, #cross2 {
+    cursor: pointer;
+    transition: transform 0.5s;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: white;
+}
+
+#cross:hover, #cross2:hover { transform: translateY(-5px); }
+
+#pop-up-background, #pop-up-container,
+#pop-up-menu, #authentication-from, #pop-up-menu2 {
+    visibility: hidden;
+}
+
+#pop-up-menu2 {
+    background-color: white;
+    position: absolute;
+    top: 30%;
+    left: 36%;
+	border-radius: 10px;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 
+	0 10px 10px rgba(0, 0, 0, 0.25);
+    width: 400px;
+    max-width: 80%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3%;
+}
+
+.error {
+    color: red;
+    line-height: 1.5em;
+    margin-top: 10%;
+}

@@ -1,203 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>My BCIT Project</title>
-  <meta name="comp1800 boilerplate code" content="my bcit project">
-  <meta name="author" content="BCIT">
-  <style>
-    .grid-container {
-      display: grid;
-      grid-template-columns: 0.7fr 1.3fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 0px 0px;
-      grid-template-areas:
-        "n upcoming"
-        "empty past";
-      background-color: rgba(44, 44, 54, 0.653);
-      font-size: 20px;
-      border: 3px solid rgb(62, 60, 60);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .upcoming {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 0px 0px;
-      grid-area: upcoming;
-      padding-left: 30px;
-      color: white;
-    }
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/profile.css">
 
-    .ur {
-      grid-area: 1 / 1 / 3 / 2;
-      border: 3px black;
-    }
+    <!-- hook up with firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
 
-    .no {
-      grid-area: 2 / 1 / 3 / 2;
-    }
-
-    .past {
-      grid-area: past;
-      padding-left: 30px;
-      padding-bottom: 5%;
-    }
-
-    .n {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
-      gap: 0px 0px;
-      grid-template-areas:
-        "a"
-        "b"
-        "c";
-      grid-area: n;
-      border-right: 3px solid rgb(62, 60, 60);
-      padding-left: 10px;
-      color: white;
-    }
-
-    .a {
-      grid-area: a;
-    }
-
-    .b {
-      grid-area: b;
-    }
-
-    .c {
-      grid-area: c;
-    }
-
-    .empty {
-      grid-area: empty;
-      border-right: 3px solid rgb(62, 60, 60);
-    }
-
-    .ft {
-      text-align: center;
-    }
-
-    .container {
-
-      background-image: linear-gradient(rgba(0, 0, 0, 0.7),
-          rgba(0, 0, 0, 0.7)), url(../images/background.jpg);
-      background-position: center;
-      background-size: cover;
-    }
-
-    .navbar {
-      height: 12%;
-      display: flex;
-      align-items: center;
-    }
-
-    .logo {
-      width: 50px;
-      cursor: pointer;
-    }
-
-    .menu-icon {
-      width: 30px;
-      cursor: pointer;
-      margin-left: 40px;
-    }
-
-    nav {
-      flex: 1;
-      text-align: right;
-    }
-
-    nav ul li {
-      list-style: none;
-      display: inline-block;
-      margin-left: 30px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-    }
-  </style>
-
-
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-  
-  <!-- Connecting Firebase Server to the web -->
-  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
-
-  <!-- Initializing firebase in the web -->
-  <script src="scripts/firebase_api_team18.js"> </script>
-  <script src="scripts/profile.js" defer></script>
+    <title>Team 18 Project</title>
 </head>
 
-<body class="container">
+<body>
+    <header>
+        <img class="logo" src="images/logo2.png" alt="">
+        <nav>
+            <ul class="nav_links">
+                <button id="home">Home</button>
+                <button id="logout">Log out</button>
+            </ul>
+        </nav>
+    </header>
+    <hr style="width: 100%">
 
-  <div>
-    <div class="navbar">
-      <img src="images/logo.png" class="logo">
-      <h2 style="padding-left: 40%;">Account</h2>
-      <nav>
-        <ul>
-          <li><a href="main.html">Home</a></li>
-
-          <li><a href="">About</a></li>
-        </ul>
-      </nav>
-      <img src="images/menu.png" class="menu-icon">
+    <!--------------------------------mobile version------------------------------------>
+    <div class="menu-container">
+        <img onclick="openNav()" class="menu" src="images/hamburger.png" alt="">
     </div>
-  </div>
-  <div class="card">
-    <h2 class="card-body">
-
-    </h2>
-  </div>
-
-
-  <div class="grid-container">
-    <div class="upcoming">
-      <div class="ur">Upcoming reservations</div>
-      <div class="no">No Upcoming Reservation. Book Now</div>
-    </div>
-    <div class="past">
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="images/pexels-pixabay-262978.jpg" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Past Reservation</p>
+    <div id="mobile_menu" class="overlay">
+        <button class="close" onclick="closeNav()">&times;</button>
+        <div id="mobile_menu" class="overlay_content">
+            <div id="home2">Home</div>
+            <div id="profile2">Profile</div>
+            <div id="logout2">Log out</div>
         </div>
-      </div>
     </div>
-    <div class="n">
-      <div class="a">Reservations</div>
-      <div class="b">Saved Restaurants</div>
-      <div class="c">Account Details</div>
-      <div class="d">
-        <p>Change Name:</p>
-        <form id="change-name">
-          <input type="text" name="name">
-          <button>Change</button>
+    <!---------------------------------------------------------------------------------->
+    <div id="info">
+
+    </div>
+
+    <div id="buttons">
+        <ul>
+            <li>Reservations</li>
+            <li>About Me</li>
+        </ul>
+    </div>
+
+    <div id="reservations">
+        <div>Past Reservation</div>
+        <div>Current Reservation</div>
+    </div>
+
+    <div id="aboutMe-container">
+        <form id="aboutMe">
+            <div>
+                <label for="name">Name:</label>
+                <input name="name" type="text">
+            </div>
+            <div>
+                <label for="email">Email Address:</label>
+                <input name="email" type="text">
+            </div>
+            <div>
+                <label for="phoneNumber">Phone Number:</label>
+                <input name="phoneNumber" type="text">
+            </div>
+            <button id="saveChanges">Save Changes</button>
         </form>
-      </div>
     </div>
-    <div class="empty"></div>
-  </div>
-  <footer class="ft">
-    <i>Copyright 2020</i>
-  </footer>
+    
+    <!-- pop-up for confirmation -->
+    <div id="pop-up-background"></div>
+    <div id="pop-up-container">
+        <div id="pop-up-menu">
+            <form id="authentication-form">
+                <h1 id="cross">&times;</h1>
+                <h1>Authentication Page</h1>
+                <p>In order to change your email, you have to first verify that it's you</p>
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" required>
+                <button id="verify">Verify</button>
+                <p class="error"></p>
+            </form>
+        </div>
+        <div id="pop-up-menu2">
+            <h1 id="cross2">&times;</h1>
+            <h1>Congrats!</h1>
+            <p>Your Information is successfully changed</p>
+            <button id="ok">Confirm</button>
+        </div>
+    </div>
 
-
-
-
-
-
+    <script src="scripts/firebaseLoad.js"></script>
+    <script src="scripts/profile.js"></script>
 </body>
 
 </html>
