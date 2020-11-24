@@ -83,7 +83,7 @@ auth.onAuthStateChanged(function (user) {
         console.log(displayHere);
 
         //add more when restaurants/grocery shops are added.
-        const array_rest = ['01', '02', '03', '04', '05', '06'];
+        const array_rest = ['01', '02', '03', '04', '05', '06', '07', '08'];
         const array_gro = ['01', '02', '03', '04', '05'];
 
         //read all the restaurants
