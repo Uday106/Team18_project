@@ -7,6 +7,12 @@
 .logo {
     width: 130px;
     height: 50px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.logo:hover {
+    transform: translateY(-5px);
 }
 
 .menu {
@@ -14,7 +20,7 @@
     height: 40px;
     position: absolute;
     right: 10%;
-    top: 4%;
+    top: 2%;
     cursor: pointer;
     transition: transform 0.5s;
     display: none;
@@ -33,7 +39,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
+    padding: 10px 10%;
 }
 
 button {
@@ -137,6 +143,7 @@ button:focus {
     transition: transform 0.5s;
 }
 
+
 .img-container h2 {
     margin-bottom: 30px;
 }
@@ -147,32 +154,30 @@ button:focus {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr;
 }
-.container h2 {
+
+.container > div > h2 {
     margin: 10px 20px;
     text-align: left;
 }
-hr {
-    width: 95%;   
-}
 
 #mag {
-    width: 28px;
-    height: 28px;
-    transform: translateY(9px);
+    width: 48px;
+    height: 48px;
 }
 
 #search {
+    display: flex;
+    justify-content: center;
     margin-top: 50px;
     text-align: center;
     width: 100%;
-    transform: translateY(-34px);
 }
 #search input {
     border: none;
     outline: none;
-    width: 70%;
+    width: 30%;
     border-bottom: 1px solid grey;
     margin-left: 1px;
     padding: 1%;
@@ -186,105 +191,100 @@ hr {
 	transform: scale(0.90);
 }
 
+
 #left {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#left button {
-    margin-bottom: 10%;
-    cursor: pointer;
-    transition: transform 0.5s;
-    padding: 0px 50px;
-    border: none;
-    outline: none;
-    background-color: white;
-    font-family: Times;
-    font-size: 1.2em;
-}
-
-#left button:hover {
-    transform: translateY(-10px);
-}
-
-#left button:focus {
-    border-bottom: 1px solid #BC4749;
-}
-
-
-
-.wrapper .carousel {
-    max-width: 1200px;
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 30px;
-    overflow: hidden;
-    position: relative;
 }
 
-.carousel .card {
-    line-height: 250px;
-    width: 100%;
-    max-width: 300px;
+.card {
     text-align: center;
-    color: #fff;
-    font-size: 75px;
     font-weight: bold;
-    margin: 20px 0;
+    margin: 20px 20px;
     font-weight: 600;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
     border-radius: 10px;
-}
-
-.carousel .card-1 {
-    background-color: #ed1c24;
-}
-
-.carousel .card-2 {
-    background-color: #0072bc;
-}
-
-.carousel .card-3 {
-    background-color: #39b54a;
-}
-
-.carousel .card-4 {
-    background-color: #f26522;
-}
-
-.carousel .card-5 {
-    background-color: #630460;
-}
-
-
-#prev, #next {
-    outline: none;
-    border: none;
-    background-color: #BC4749;
-    padding: 10px 14px;
-    border-radius: 100px;
-    font-weight: 300;
-    color: white;
     cursor: pointer;
     transition: transform 0.5s;
-    position: absolute;
+    text-align: left;
 }
 
-#next {
-    top: 50%;
-    right: 5%;
+.card h2, .card h5 {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.card h5 {
+    margin-bottom: 20px;
+    color: grey;
 }
 
-#prev {
-    top: 50%;
-    left: 5%;
+.card div {
+    width: 100%;
 }
 
-#buttons button:active {
+.card div:nth-child(1) {
+    height: 50%;
+}
+.card div img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0px 0px;
+}
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card:active {
     transform: scale(0.9);
 }
 
-@media only screen and (max-width: 800px) {
+#cancel {
+    padding: 9px 25px;
+    background-color: #BC4749;
+    border: 1px solid #BC4749;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: white;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+
+@media only screen and (max-width: 1000px) {
     ul {display: none;}
     .menu { display: initial; }
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .img-container p {
+        width: 90%;
+    }
+}
+
+/* iphone 6/7/8, iphone5/se, galaxy s5, galaxy fold */
+@media only screen and (max-width: 400px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
 }

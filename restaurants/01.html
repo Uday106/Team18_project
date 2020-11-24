@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/styles2.css">
+    <link rel="stylesheet" href="../CSS/rest_gro_banner_image.css">
+
+    <!-- hook up with firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <title>Team 18 Project</title>
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="../images/logo.png" alt="">
+        <nav>
+            <ul class="nav_links">
+                <button id="home">Home</button>
+                <button id="profile">Profile</button>
+                <button id="logout">Log out</button>
+            </ul>
+        </nav>
+    </header>
+
+    <!--------------------------------mobile version------------------------------------>
+    <div class="menu-container">
+        <img onclick="openNav()" class="menu" src="../images/hamburger.png" alt="">
+    </div>
+    <div id="mobile_menu" class="overlay">
+        <button class="close" onclick="closeNav()">&times;</button>
+        <div id="mobile_menu" class="overlay_content">
+            <div id="home2">Home</div>
+            <div id="profile2">Profile</div>
+            <div id="logout2">Log out</div>
+        </div>
+    </div>
+    <!---------------------------------------------------------------------------------->
+
+    <!-- all restaurants use this template for their html contents -->
+    <div id="01" class="r01 container">
+        <div class="img-container"></div>
+        <div class="grid-container">
+            <div class="left">
+                <div class="buttons">
+                    <button class="overviewBtn">Overview</button>
+                    <button class="reviewBtn">Reviews</button>
+                </div>
+                <hr>
+                <!-- name of restaurant goes inside h2 -->
+                <h2></h2>
+
+                <!-- location of restuarnt goes inside h5 -->
+                <h5></h5>
+
+                <!-- description of restaurant goes inside this div -->
+                <div class="overview"></div>
+
+                <div class="reviews">
+                    <!-- This form is used to write comments -->
+                    <form id="comment">
+                        <input id="comment_field" type="text" name="content" placeholder="comments...">
+                        <button class="submitBtn">submit</button>
+                    </form>
+
+                    <!-- this 'a' can view/hide comments -->
+                    <a id="view" href="#">view all comments</a>
+                    <a id="hide" href="#">hide all comments</a>
+                    <a id="noAccess">need login to view comments</a>
+                    <!-- comments go inside this div -->
+                    <div id="comments-container"></div>
+                </div>
+
+            </div>
+            <div class="right">
+                <div>Reservation</div>
+                <form class="reservation">
+                    <input type="date" id="date" name="date">
+                    <select name="time" id="time">
+                        <option value="hour-select">Select Hour</option>
+                        <option value="08:00 AM - 10:00 AM">8:00 AM - 10:00 AM</option>
+                        <option value="10:00 AM - 12:00 PM">10:00 AM - 12:00 AM</option>
+                        <option value="12:00 PM - 02:00 PM">12:00 PM - 02:00 PM</option>
+                        <option value="02:00 AM - 04:00 PM">02:00 PM - 04:00 PM</option>
+                        <option value="04:00 PM - 06:00 PM">04:00 PM - 06:00 PM</option>
+                        <option value="06:00 PM - 08:00 PM">06:00 PM - 08:00 PM</option>
+                        <option value="08:00 PM - 10:00 PM">08:00 PM - 10:00 PM</option>
+                        <option value="10:00 PM - 12:00 PM">10:00 PM - 12:00 PM</option>
+                    </select>
+                    <select name="people" id="people">
+                        <option value="ppl-select">How many people?</option>
+                        <option value="1">1 person</option>
+                        <option value="2">2 people</option>
+                        <option value="3">3 people</option>
+                        <option value="4">4 people</option>
+                        <option value="5">5 people</option>
+                        <option value="6">6 people</option>
+                    </select>
+                    <button id="reservationBtn">BooK</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Users can reserve for the days passed. -->
+        <script>
+            $(function () {
+                var dtToday = new Date();
+
+                var month = dtToday.getMonth() + 1;
+                var day = dtToday.getDate();
+                var year = dtToday.getFullYear();
+                if (month < 10)
+                    month = '0' + month.toString();
+                if (day < 10)
+                    day = '0' + day.toString();
+
+                var maxDate = year + '-' + month + '-' + day;
+                $('#date').attr('min', maxDate);
+            });
+        </script>
+
+        <!-- Login required Pop-up -->
+        <div id="pop-up-background"></div>
+        <div id="pop-up-container">
+            <div id="pop-up-menu">
+                <h1>Warning!</h1>
+                <p>You need to login to comment</p>
+                <button id="ok">Confirm</button>
+            </div>
+        </div>
+        <div id="pop-up-container">
+            <div id="pop-up-menu2">
+                <h1>Warning!</h1>
+                <p>You can't delete other's comments</p>
+                <button id="ok2">Confirm</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../scripts/firebaseLoad.js"></script>
+    <script src="../scripts/restaurants_groceries2.js"></script>
+    <script src="../scripts/restaurants.js"></script>
+    <script src="../scripts/reservation_restaurants.js"></script>
+
+</body>
+
+</html>

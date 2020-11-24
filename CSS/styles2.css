@@ -1,0 +1,451 @@
+/** --------- This block of css is the same as the styles.css ------------ */
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 130px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.logo:hover {
+    transform: translateY(-5px);
+}
+
+
+.menu {
+    width: 50px;
+    height: 40px;
+    position: absolute;
+    right: 10%;
+    top: 2%;
+    cursor: pointer;
+    transition: transform 0.5s;
+    display: none;
+}
+
+.menu:hover {
+    transform: translateY(-5px);
+}
+
+li, a {
+    font-size: 16px;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%;
+}
+
+button {
+    margin-left: 20px;
+}
+
+#profile {
+    padding: 9px 25px;
+    background-color: white;
+    border: 1px solid #BC4749;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: black;
+    font-size: 14px;
+}
+
+#home {
+    padding: 9px 25px;
+    background-color: white;
+    border: 1px solid #BC4749;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: black;
+    font-size: 14px;
+}
+
+#logout {
+    padding: 9px 25px;
+    background-color: #BC4749;
+    border: 1px solid #BC4749;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: white;
+    font-size: 14px;
+}
+
+button:hover {
+	transform: translateY(-5px);
+}
+
+button:active {
+	transform: scale(0.90);
+}
+
+button:focus {
+	outline: none;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+	background: linear-gradient(to right, #A7C950, #A7C957) no-repeat 0 0 / cover;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    transition: all 0.8s ease 0s;
+}
+
+.overlay_content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay_content div {
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #386641;
+    font-size: 15px;
+    transition: all 0.5s ease 0s;
+    cursor: pointer;
+}
+
+.overlay_content div:nth-child(1) {
+    border-top: 1px solid #386641;
+}
+
+.overlay_content div:hover {
+    transform: translateY(-5px);
+}
+
+.overlay .close {
+    background-color: #A7C957;
+    border: none;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+/* -------------------------------------------------------------------- */
+
+
+/* styles for html files that are in the separate folders. */
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.img-container {
+    width: 100%;
+    height: 40vh;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+.grid-container {
+    display: grid;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 80%;
+    grid-template-columns: 4fr 2fr;
+    margin: 0 auto 70px auto;
+    grid-gap: 2em;
+}
+
+.left, .right {
+    background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 
+    0 10px 10px rgba(0, 0, 0, 0.25);
+    max-width: 1280px;
+    min-height: 200px;
+}
+.right {
+    max-height: 350px;
+}
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h2 { margin-bottom: 2px;}
+h5 { 
+    margin-top: 0; 
+    margin-bottom: 10px; 
+    color: grey;
+}
+hr { width: 90%;}
+
+.buttons {
+    position: relative;
+    left: -30%;
+}
+
+.buttons button {
+    font-size: 1em;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: transform 0.8s;
+    transform: translateX(-20px);
+    transform: translateY(10px);
+    margin-top: 20px;
+}
+
+.buttons .overviewBtn {
+    color: #BC4749;
+    border-bottom: 4px solid #BC4749;
+}
+
+.reviewBtn {
+    color: black;
+    border-bottom: 1px solid grey;
+}
+
+.submitBtn {
+    padding: 4px 20px;
+    background-color: #BC4749;
+    border: 1px solid #BC4749;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: white;
+    font-size: 14px;
+}
+
+.overview {
+    width: 80%;
+    margin: 0 0 30px 0;
+}
+.overview div {
+    margin-bottom: 20px;
+}
+.overview h3 {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+.reviews {
+    width: 80%;
+    margin: 30px;
+    display: none;
+}
+
+#comment_field {
+    border: none;
+    outline: none;
+    width: 60%;
+    border-bottom: 2px solid lightgrey;
+    margin-bottom: 20px;
+    transition: transform 0.5s;
+}
+
+#comment_field:focus {
+    border-bottom: 2px solid #BC4749;
+}
+
+#comment_field:active {
+    transform: scale(0.9);
+}
+
+#comments-container { display: none; }
+
+#view { display: block; }
+#hide { display: none; }
+#noAccess {
+    display: none; 
+    color: grey;
+    text-decoration: none;
+}
+
+a {
+    display: block;
+    color: blue;
+    text-decoration: underline;
+    margin-bottom: 20px;
+    
+}
+
+.reservation {
+    display: flex;
+    flex-direction: column;
+    max-height: 250px;
+    align-items: center;
+}
+
+.reservation input {
+    margin: 15px 0;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #BC4749;
+}
+
+.reservation select {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #BC4749;
+    margin: 15px;
+}
+
+.right div { 
+    background-color: #BC4749;
+    width: 100%;
+    line-height: 3em;
+    font-size: 1.7em; 
+    color: white;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    margin-top: 0;
+}
+
+.reservation button {
+    padding: 8px 25px;
+    background-color: #BC4749;
+    border: 1px solid #BC4749;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: white;
+    font-size: 14px;
+    margin: 18px 0;
+}
+
+#comments-container span {
+    display: block;
+}
+
+#comments-container div div {
+    font-size: 18px;
+}
+.commentedDate {
+    color: grey;
+    font-size: 0.6em;
+    text-align: right;
+}
+
+.comment-info {
+    display: grid;
+    grid-template-columns: 3fr 10fr 1fr;
+    grid-gap: 1em;
+    border-bottom: 1px solid #BC4749; 
+    margin: 30px 0;
+}
+.comment-info div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+}
+.comment-info div span {
+    color: grey;
+    font-size: 0.6em;
+}
+.delete {
+    background: rgba(255,255,255,0.6);
+    width: 40px;
+    transform: translateY(-10px);
+    padding: 10px 0;
+    font-weight:  bold;
+    text-align: right;
+    cursor:  pointer;
+}
+
+#pop-up-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,1);
+    opacity: 0.2;
+    width: 100%;
+    height: 100vh;
+    visibility: hidden;
+}
+
+#pop-up-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+#pop-up-menu, #pop-up-menu2 {
+    background-color: white;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+	border-radius: 10px;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 
+	0 10px 10px rgba(0, 0, 0, 0.25);
+    width: 400px;
+    max-width: 80%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3%;
+    visibility: hidden;
+}
+
+#cross, #cross2 {
+    cursor: pointer;
+    transition: transform 0.5s;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    background-color: white;
+    visibility: hidden;
+}
+
+#cross:hover, #cross2:hover { transform: translateY(-5px); }
+#ok, #ok2 {
+    padding: 9px 20px;
+    background-color: #BC4749;
+    border: 1px solid #BC4749;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: white;
+    font-size: 14px;
+    margin: 10px;
+    visibility: hidden;
+}
+
+@media only screen and (max-width: 720px) {
+    ul {display: none;}
+    .menu { display: initial; }
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    #pop-up-background {
+        height: 200vh;
+    }
+    
+    .buttons {left: -2%;}
+}

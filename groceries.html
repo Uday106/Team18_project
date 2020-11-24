@@ -22,7 +22,6 @@
         <img class="logo" src="images/logo.png" alt="">
         <nav>
             <ul class="nav_links">
-                <button id="home">Home</button>
                 <button id="profile">Profile</button>
                 <button id="logout">Log out</button>
             </ul>
@@ -36,7 +35,6 @@
     <div id="mobile_menu" class="overlay">
         <button class="close" onclick="closeNav()">&times;</button>
         <div id="mobile_menu" class="overlay_content">
-            <div id="home2">Home</div>
             <div id="profile2">Profile</div>
             <div id="logout2">Log out</div>
         </div>
@@ -53,39 +51,76 @@
         </p>
     </div>
     <div class="container">
-        <div id="left">
+        <!-- Search bar container -->
+        <div>
             <form id="search">
                 <img id="mag" src="images/search.png" alt="">
-                <input type="text" name="search" placeholder="search...">
+                <input type="text" name="search" 
+                    placeholder="search by name, city, or location">
             </form>
-            <button id="Chinese">Chinese</button>
-            <button id="Seafood">Seafood</button>
-            <button id="Fast Foods">Fast Foods</button>
         </div>
-        <div id="right">
+
+        <!-- under the search bar -->
+        <div>
             <h2>Grocery Shops</h2>
             <hr>
-            <!-- working on this -->
-            <!-- <div id="body">
+            <div id="body">
                 <div class="wrapper">
-                    <div class="carousel">
-                        <button id="prev"> < </button>
-                        <div class="card card-1 active">A</div>
-                        <div class="card card-2">B</div>
-                        <div class="card card-3">C</div>
-                        <div class="card card-4">D</div>
-                        <div class="card card-5">E</div>   
-                        <button id="next"> > </button>
+                    <div class="grid-container"> 
+                        <div class="card" goto='groceries/01.html'>
+                            <div>
+                                <img class="card-img" src="images/groceries/01.jpg" alt="">
+                            </div>
+                            <div class="card-descript">
+                                <h2 class="card-info">Real Canadian Superstore</h2>
+                                <h5 class="card-info">8195 120 St, Delta, BC V4C 6P7</h5>
+                            </div>
+                        </div>
+                        <div class="card" goto='groceries/02.html'>
+                            <div>
+                                <img class="card-img" src="images/groceries/02.png" alt="">
+                            </div>
+                            <div class="card-descript">
+                                <h2 class="card-info">Save on Foods</h2>
+                                <h5 class="card-info">7015 120 St, Delta, BC V4E 2A9</h5>
+                            </div>
+                        </div>
+                        <div class="card" goto='groceries/03.html'>
+                            <div>
+                                <img class="card-img" src="images/groceries/03.jpg" alt="">
+                            </div>
+                            <div class="card-descript">
+                                <h2 class="card-info">Walmart</h2>
+                                <h5 class="card-info">7155 120 St, Delta, BC V4E 2B1</h5>
+                            </div>
+                        </div>
+                        <div class="card" goto='groceries/04.html'>
+                            <div>
+                                <img class="card-img" src="images/groceries/04.jpg" alt="">
+                            </div>
+                            <div class="card-descript">
+                                <h2 class="card-info">Safeway</h2>
+                                <h5 class="card-info">6401 120 St, Delta, BC V4E 3G3</h5>
+                            </div>
+                        </div>
+                        <div class="card" goto='groceries/05.html'>
+                            <div>
+                                <img class="card-img" src="images/groceries/05.jpg" alt="">
+                            </div>
+                            <div class="card-descript">
+                                <h2 class="card-info">Fresh Co</h2>
+                                <h5 class="card-info">7450 120 St, Surrey, BC V3W 3M9</h5>
+                            </div>
+                        </div>   
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
 
 
     <script src="scripts/firebaseLoad.js"></script>
     <script src="scripts/restaurants_groceries.js"></script>
-    <script src="scripts/groceries.js"></script>
 </body>
 
 </html>

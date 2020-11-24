@@ -1,5 +1,3 @@
-
-
 // log out
 const logout = document.querySelector('#logout');
 logout.addEventListener('click', function (e) {
@@ -16,17 +14,22 @@ logout2.addEventListener('click', function (e) {
 });
 
 // navigation
+
+const img = document.querySelector('.logo');
+img.addEventListener('click', function (e) {
+    window.location = 'main.html';
+});
 const home = document.querySelector('#home');
 const profile = document.querySelector('#profile');
 const home2 = document.querySelector('#home2');
 const profile2 = document.querySelector('#profile2');
 
 home.addEventListener('click', function (e) {
-    window.location = 'main.html';
+    window.history.go(-1);
 });
 
 home2.addEventListener('click', function (e) {
-    window.location = 'main.html';
+    window.history.go(-1);
 });
 
 // mobile-menu navigation
@@ -72,11 +75,141 @@ function displayUserInfo(user) {
 
 
 // tracking user
+const displayHere = document.querySelector('#reser-container');
 auth.onAuthStateChanged(function (user) {
     if (user) {
         console.log('user logged in:', user);
         userInfo(user);
+        console.log(displayHere);
 
+        //add more when restaurants/grocery shops are added.
+        const array_rest = ['01', '02', '03', '04', '05', '06'];
+        const array_gro = ['01', '02', '03', '04', '05'];
+
+        //read all the restaurants
+        array_rest.forEach(function (value) {
+            //read all the reservations from each restaurant
+            db.collection('restaurants').doc(value).collection('reservation')
+                .onSnapshot(function (snap) {
+                    let changes = snap.docChanges();
+                    changes.forEach(function (change) {
+                        if (change.type == 'added') {
+                            //check whether the reserver equals to the current user
+                            //if reserver is the current user...
+                            if (change.doc.data().reserverId == user.uid) {
+                                const documentID = change.doc.data().document;
+
+                                let div = document.createElement('div');
+                                let restName = document.createElement('div');
+                                let restLocation = document.createElement('div');
+                                let reserver = document.createElement('div');
+                                let people = document.createElement('div');
+                                let date = document.createElement('div');
+                                let reservedTime = document.createElement('div');
+                                let cancel = document.createElement('button');
+                                
+                                restName.textContent = 'Restaurant: ' + change.doc.data().name;
+                                restLocation.textContent = 'Location: ' + change.doc.data().location;
+                                reserver.textContent = 'Reserver: ' + change.doc.data().reserver;
+                                people.textContent = 'How many people: ' + change.doc.data().people;
+                                date.textContent = 'Date: ' + change.doc.data().date;
+                                reservedTime.textContent = 'Time: ' + change.doc.data().reservedTime;
+                                cancel.textContent = 'Cancel';
+                                cancel.setAttribute('id','cancel');
+
+                                div.appendChild(restName);
+                                div.appendChild(restLocation);
+                                div.appendChild(reserver);
+                                div.appendChild(people);
+                                div.appendChild(date);
+                                div.appendChild(reservedTime);
+                                div.appendChild(cancel);
+                                div.setAttribute('data-id', change.doc.id);
+                                displayHere.appendChild(div);
+
+                                //cancelling reservation
+                                cancel.addEventListener('click', function(e) {
+                                    e.stopPropagation();
+                                    let id = e.target.parentElement.getAttribute('data-id');
+                                    if (user.uid == change.doc.data().reserverId) {
+                                        db.collection('restaurants').doc(documentID)
+                                            .collection('reservation').doc(id).delete();
+                                    }
+
+                                })
+
+                            }
+                        } else if (change.type == 'removed') {
+                            let div = document.querySelector('[data-id=' + change.doc.id + ']');
+                            div.parentElement.removeChild(div);
+                        }
+                    })
+                })
+        })
+
+        //read all the grocery stores
+        array_gro.forEach(function (value) {
+            //read all the reservations from each grocery store
+            db.collection('Grocery Store').doc(value).collection('reservation')
+                .onSnapshot(function (snap) {
+                    let changes = snap.docChanges();
+                    changes.forEach(function (change) {
+                        if (change.type == 'added') {
+                            //check whether the reserver equals to the current user
+                            //if reserver is the current user...
+                            if (change.doc.data().reserverId == user.uid) {
+                                const documentID = change.doc.data().document;
+
+                                let div = document.createElement('div');
+                                let restName = document.createElement('div');
+                                let restLocation = document.createElement('div');
+                                let reserver = document.createElement('div');
+                                let people = document.createElement('div');
+                                let date = document.createElement('div');
+                                let reservedTime = document.createElement('div');
+                                let cancel = document.createElement('button');
+                                
+                                restName.textContent = 'Grocery Store: ' + change.doc.data().name;
+                                restLocation.textContent = 'Location: ' + change.doc.data().location;
+                                reserver.textContent = 'Reserver: ' + change.doc.data().reserver;
+                                people.textContent = 'How many people: ' + change.doc.data().people;
+                                date.textContent = 'Date: ' + change.doc.data().date;
+                                reservedTime.textContent = 'Time: ' + change.doc.data().reservedTime;
+                                cancel.textContent = 'Cancel';
+                                cancel.setAttribute('id','cancel');
+
+                                div.appendChild(restName);
+                                div.appendChild(restLocation);
+                                div.appendChild(reserver);
+                                div.appendChild(people);
+                                div.appendChild(date);
+                                div.appendChild(reservedTime);
+                                div.appendChild(cancel);
+                                div.setAttribute('data-id', change.doc.id);
+                                displayHere.appendChild(div);
+
+                                //cancelling reservation
+                                cancel.addEventListener('click', function(e) {
+                                    e.stopPropagation();
+                                    let id = e.target.parentElement.getAttribute('data-id');
+                                    if (user.uid == change.doc.data().reserverId) {
+                                        db.collection('Grocery Store').doc(documentID)
+                                            .collection('reservation').doc(id).delete();
+                                    }
+
+                                })
+
+                            }
+                        } else if (change.type == 'removed') {
+                            let div = document.querySelector('[data-id=' + change.doc.id + ']');
+                            div.parentElement.removeChild(div);
+                        }
+                    })
+                })
+                
+        })
+
+        //Reservations vs About Me
         infoClicked.addEventListener('click', function (e) {
             if (e.target.textContent == 'Reservations') {
                 e.target.style = 'border-bottom: 3px solid #BC4749;';
@@ -91,6 +224,7 @@ auth.onAuthStateChanged(function (user) {
                 displayUserInfo(user);
             }
 
+            //About me, upon clicking 'save changes' button
             aboutMe.addEventListener('submit', function (e) {
                 e.preventDefault();
                 const name = document.querySelector('#aboutMe').name.value;
@@ -105,8 +239,8 @@ auth.onAuthStateChanged(function (user) {
                 const cross2 = document.querySelector('#cross2');
                 const exit = document.querySelector('#cross');
 
-
                 db.collection('users').doc(user.uid).get().then(function (snapshot) {
+                    //if user wants to change email...
                     if (snapshot.data().email != email) {
                         popBg.style = 'visibility: initial';
                         popCtn.style = 'visibility: initial';
@@ -114,11 +248,11 @@ auth.onAuthStateChanged(function (user) {
                         authForm.style = 'visibility: initial';
 
                         exit.addEventListener('click', function (event) {
-                            event.preventDefault();
                             popBg.style = 'visibility: hidden';
                             popCtn.style = 'visibility: hidden';
                             popMenu.style = 'visibility: hidden';
                             authForm.style = 'visibility: hidden';
+                            window.location = "profile.html";
                         })
 
                         authForm.addEventListener('submit', function (event) {
@@ -185,17 +319,16 @@ auth.onAuthStateChanged(function (user) {
                             popMenu2.style = "visibility: hidden";
                         })
 
-                }
+                    }
+                })
+
+                const nameDisplay = infoContainer.firstElementChild;
+                nameDisplay.textContent = name;
             })
 
-            const nameDisplay = infoContainer.firstElementChild;
-            nameDisplay.textContent = name;
 
-
-
-        })
-    });
+        });
     } else {
-    console.log('user logged out');
-}
+        console.log('user logged out');
+    }
 });

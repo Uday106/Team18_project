@@ -21,7 +21,6 @@
         <img class="logo" src="images/logo.png" alt="">
         <nav>
             <ul class="nav_links">
-                <button id="home">Home</button>
                 <button id="profile">Profile</button>
                 <button id="logout">Log out</button>
             </ul>
@@ -35,7 +34,6 @@
     <div id="mobile_menu" class="overlay">
         <button class="close" onclick="closeNav()">&times;</button>
         <div id="mobile_menu" class="overlay_content">
-            <div id="home2">Home</div>
             <div id="profile2">Profile</div>
             <div id="logout2">Log out</div>
         </div>
@@ -55,36 +53,79 @@
         <div id="left">
             <form id="search">
                 <img id="mag" src="images/search.png" alt="">
-                <input type="text" name="search" placeholder="search...">
+                <input type="text" name="search" 
+                    placeholder="search by name, city, or location">
             </form>
-            <button id="Chinese">Chinese</button>
-            <button id="Seafood">Seafood</button>
-            <button id="Fast Foods">Fast Foods</button>
         </div>
         <div id="right">
-            <h2>Grocery Shops</h2>
+            <h2>Restaurants</h2>
             <hr>
-            <!-- working on this -->
-            <!-- <div id="body">
+            <div id="body">
                 <div class="wrapper">
-                    <div class="carousel">
-                        <button id="prev"> < </button>
-                        <div class="card card-1 active">A</div>
-                        <div class="card card-2">B</div>
-                        <div class="card card-3">C</div>
-                        <div class="card card-4">D</div>
-                        <div class="card card-5">E</div>   
-                        <button id="next"> > </button>
+                    <div class="grid-container"> 
+                        <div class="card" goto="restaurants/01.html">
+                            <div>
+                                <img class="card-img" src="images/restaurants/01.jpg" alt="">
+                            </div>
+                            <div class="card-descript">
+                                <h2 class="card-info">Whitespot</h2>
+                                <h5 class="card-info">4075 North Rd, Burnaby, BC V3J 1S3</h5>
+                            </div>
+                        </div>
+                        <div class="card" goto="restaurants/02.html">
+                            <div>
+                                <img class="card-img" src="images/restaurants/02.jpeg" alt="">
+                            </div>
+                            <div class="card-descript">
+                                <h2 class="card-info">Milestones</h2>
+                                <h5 class="card-info">3085 152 St, Surrey, BC V4P 3K1</h5>
+                            </div>
+                        </div>
+                        <div class="card" goto="restaurants/03.html">
+                            <div>
+                                <img class="card-img" src="images/restaurants/03.jpeg" alt="">
+                            </div>
+                            <div class="card-descript">
+                                <h2 class="card-info">Boston Pizza</h2>
+                                <h5 class="card-info">600-7488 King George Blvd, Surrey, BC V3W 0H9</h5>
+                            </div>
+                        </div>
+                        <div class="card" goto="restaurants/04.html">
+                            <div>
+                                <img class="card-img" src="images/restaurants/04.jpg" alt="">
+                            </div>
+                            <div class="card-descript">
+                                <h2 class="card-info">Brown Social House</h2>
+                                <h5 class="card-info">6485 120 St, Delta, BC V4E 3G3</h5>
+                            </div>
+                        </div>
+                        <div class="card" goto="restaurants/05.html">
+                            <div>
+                                <img class="card-img" src="images/restaurants/05.jpg" alt="">
+                            </div>
+                            <div class="card-descript">
+                                <h2 class="card-info">Sushi California</h2>
+                                <h5 class="card-info">501 North Rd, Coquitlam, BC V3J 1N7</h5>
+                            </div>
+                        </div>  
+                        <div class="card" goto="restaurants/06.html">
+                            <div>
+                                <img class="card-img" src="images/restaurants/06.jpg" alt="">
+                            </div>
+                            <div class="card-descript">
+                                <h2 class="card-info">Olive Garden</h2>
+                                <h5 class="card-info">20080 Langley Bypass, Langley City, BC V3A 9J7</h5>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
     
 
     <script src="scripts/firebaseLoad.js"></script>
     <script src="scripts/restaurants_groceries.js"></script>
-    <script src="scripts/restaurants.js"></script>
 </body>
 
 </html>
