@@ -14,7 +14,6 @@ logout2.addEventListener('click', function (e) {
 });
 
 // navigation
-
 const img = document.querySelector('.logo');
 img.addEventListener('click', function (e) {
     window.location = 'main.html';
@@ -107,7 +106,7 @@ auth.onAuthStateChanged(function (user) {
                                 let date = document.createElement('div');
                                 let reservedTime = document.createElement('div');
                                 let cancel = document.createElement('button');
-                                
+
                                 restName.textContent = 'Restaurant: ' + change.doc.data().name;
                                 restLocation.textContent = 'Location: ' + change.doc.data().location;
                                 reserver.textContent = 'Reserver: ' + change.doc.data().reserver;
@@ -115,7 +114,7 @@ auth.onAuthStateChanged(function (user) {
                                 date.textContent = 'Date: ' + change.doc.data().date;
                                 reservedTime.textContent = 'Time: ' + change.doc.data().reservedTime;
                                 cancel.textContent = 'Cancel';
-                                cancel.setAttribute('id','cancel');
+                                cancel.setAttribute('id', 'cancel');
 
                                 div.appendChild(restName);
                                 div.appendChild(restLocation);
@@ -128,7 +127,7 @@ auth.onAuthStateChanged(function (user) {
                                 displayHere.appendChild(div);
 
                                 //cancelling reservation
-                                cancel.addEventListener('click', function(e) {
+                                cancel.addEventListener('click', function (e) {
                                     e.stopPropagation();
                                     let id = e.target.parentElement.getAttribute('data-id');
                                     if (user.uid == change.doc.data().reserverId) {
@@ -168,7 +167,7 @@ auth.onAuthStateChanged(function (user) {
                                 let date = document.createElement('div');
                                 let reservedTime = document.createElement('div');
                                 let cancel = document.createElement('button');
-                                
+
                                 restName.textContent = 'Grocery Store: ' + change.doc.data().name;
                                 restLocation.textContent = 'Location: ' + change.doc.data().location;
                                 reserver.textContent = 'Reserver: ' + change.doc.data().reserver;
@@ -176,7 +175,7 @@ auth.onAuthStateChanged(function (user) {
                                 date.textContent = 'Date: ' + change.doc.data().date;
                                 reservedTime.textContent = 'Time: ' + change.doc.data().reservedTime;
                                 cancel.textContent = 'Cancel';
-                                cancel.setAttribute('id','cancel');
+                                cancel.setAttribute('id', 'cancel');
 
                                 div.appendChild(restName);
                                 div.appendChild(restLocation);
@@ -189,14 +188,13 @@ auth.onAuthStateChanged(function (user) {
                                 displayHere.appendChild(div);
 
                                 //cancelling reservation
-                                cancel.addEventListener('click', function(e) {
+                                cancel.addEventListener('click', function (e) {
                                     e.stopPropagation();
                                     let id = e.target.parentElement.getAttribute('data-id');
                                     if (user.uid == change.doc.data().reserverId) {
                                         db.collection('Grocery Store').doc(documentID)
                                             .collection('reservation').doc(id).delete();
                                     }
-
                                 })
 
                             }
@@ -206,7 +204,7 @@ auth.onAuthStateChanged(function (user) {
                         }
                     })
                 })
-                
+
         })
 
         //Reservations vs About Me

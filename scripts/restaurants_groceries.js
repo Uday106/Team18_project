@@ -59,7 +59,7 @@ const aTOz = document.querySelector('.aTOz');
 
 //if the current html file is restaurants.html
 if (cardContainer.getAttribute('id') == 'restaurants') {
-    db.collection('restaurants').get().then(function (snapshot) {
+    db.collection('restaurants').orderBy('name').get().then(function (snapshot) {
         snapshot.docs.forEach(function (doc) {
             let id = doc.id; //document id
             let card = document.createElement('div');
@@ -131,10 +131,8 @@ if (cardContainer.getAttribute('id') == 'restaurants') {
             })
         })
     }) 
-} 
-// if the current page is groceries.html...
-else if (cardContainer.getAttribute('id') == 'grocery-shops') {
-    db.collection('Grocery Store').get().then(function (snapshot) {
+} else if (cardContainer.getAttribute('id') == 'grocery-shops') {
+    db.collection('Grocery Store').orderBy('name').get().then(function (snapshot) {
         snapshot.docs.forEach(function (doc) {
             let id = doc.id; //document id
             let card = document.createElement('div');

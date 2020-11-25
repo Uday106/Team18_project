@@ -71,7 +71,7 @@ db.collection('restaurants').get().then(function(snap) {
                 // 5. checks whether the date is the past date ... 
                 if (doc.data().time < utcTime) {
 
-                    // 6. if it's the past date, delete the reservation
+                    // 6. if the date is in the past, delete the reservation
                     db.collection('restaurants').doc(document.id).collection('reservation')
                     .doc(doc.id).delete();
                 }
@@ -96,7 +96,7 @@ db.collection('Grocery Store').get().then(function(snap) {
                 // 5. checks whether the date is the past date ... 
                 if (doc.data().time < utcTime) {
 
-                    // 6. if it's the past date, delete the reservation
+                    // 6. if the date is in the past, delete the reservation
                     db.collection('Grocery Store').doc(document.id).collection('reservation')
                     .doc(doc.id).delete();
                 }

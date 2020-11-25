@@ -194,20 +194,6 @@ button:focus {
 	transform: scale(0.90);
 }
 
-.orderBy {
-    outline: none;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    transition: transform 0.5s;
-    border-bottom: 1px solid grey;
-    padding-bottom: 5px;
-}
-
-.orderBy:focus {
-    border-bottom: 1px solid #BC4749;
-}
-
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -225,6 +211,8 @@ button:focus {
     cursor: pointer;
     transition: transform 0.5s;
     text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .card h2, .card h5 {
@@ -233,7 +221,7 @@ button:focus {
     margin-right: 20px;
 }
 .card h5 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     color: grey;
 }
 
