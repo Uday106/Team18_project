@@ -21,7 +21,13 @@ auth.onAuthStateChanged(function (user) {
                         var date = reservation.date.value;
                         var people = reservation.people.value;
                         var reservationDate = new Date(reservation.date.value);
-                        var time = reservationDate.getTime();
+
+                        var utcDate = reservationDate.getUTCDate().toString();
+                        var utcYear = reservationDate.getUTCFullYear().toString();
+                        var utcMonth = (reservationDate.getUTCMonth() + 1).toString();
+
+                        var d = new Date(`${utcYear}-${utcMonth}-${utcDate}`);
+                        var utcTime = d.getTime();
                         var reservedTime = reservation.time.value;
                         
                         //this is going to be on the upcoming reservations on users' profile
@@ -30,7 +36,7 @@ auth.onAuthStateChanged(function (user) {
                             location: restLocation,
                             reserver: reserver,
                             reserverId: user.uid,
-                            time: time,
+                            time: utcTime,
                             date: date,
                             people: people,
                             reservedTime: reservedTime,

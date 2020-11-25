@@ -1,8 +1,8 @@
 /* grocery stores */
 
-.g01.img-container { background-image: url(../images/groceries/01.jpg); }
+.g01 .img-container { background-image: url(../images/groceries/01.jpg); }
 
-.g02 .img-container { background-image: url(../images/groceries/02.png); }
+.g02 .img-container { background-image: url(../images/groceries/02.jpg); }
 
 .g03 .img-container { background-image: url(../images/groceries/03.jpg); }
 
@@ -14,9 +14,9 @@
 
 .r01 .img-container { background-image: url(../images/restaurants/01.jpg); }
 
-.r02 .img-container { background-image: url(../images/restaurants/02.jepg); }
+.r02 .img-container { background-image: url(../images/restaurants/02.jpg); }
 
-.r03 .img-container { background-image: url(../images/restaurants/03.jpeg); }
+.r03 .img-container { background-image: url(../images/restaurants/03.jpg); }
 
 .r04 .img-container { background-image: url(../images/restaurants/04.jpg); }
 

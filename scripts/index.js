@@ -46,3 +46,63 @@ loginForm.addEventListener('submit', function(e) {
         loginForm.querySelector('.error').innerHTML = err.message;
     })
 });
+
+// deleting past reservations from the firestore-----------------------------------------------------
+var d = new Date();
+var utcDate = d.getUTCDate().toString();
+var utcYear = d.getUTCFullYear().toString();
+var utcMonth = (d.getUTCMonth() + 1).toString();
+var date = new Date(`${utcYear}-${utcMonth}-${utcDate}`);
+var utcTime = date.getTime();
+
+// 1. get the list of restaurants ...
+db.collection('restaurants').get().then(function(snap) {
+
+    // 2. for each restaurant...
+    snap.docs.forEach(function(document) {
+
+        // 3. get the list of reservations
+        db.collection('restaurants').doc(document.id).collection('reservation')
+        .get().then(function(snapshot) {
+
+            // 4. for each reservation ...
+            snapshot.docs.forEach(function(doc) {
+
+                // 5. checks whether the date is the past date ... 
+                if (doc.data().time < utcTime) {
+
+                    // 6. if it's the past date, delete the reservation
+                    db.collection('restaurants').doc(document.id).collection('reservation')
+                    .doc(doc.id).delete();
+                }
+            })
+        })
+    })
+})
+
+// 1. get the list of grocery shops ...
+db.collection('Grocery Store').get().then(function(snap) {
+
+    // 2. for each grocery shop...
+    snap.docs.forEach(function(document) {
+
+        // 3. get the list of reservations
+        db.collection('Grocery Store').doc(document.id).collection('reservation')
+        .get().then(function(snapshot) {
+
+            // 4. for each reservation ...
+            snapshot.docs.forEach(function(doc) {
+
+                // 5. checks whether the date is the past date ... 
+                if (doc.data().time < utcTime) {
+
+                    // 6. if it's the past date, delete the reservation
+                    db.collection('Grocery Store').doc(document.id).collection('reservation')
+                    .doc(doc.id).delete();
+                }
+            })
+        })
+    })
+})
+
+//--------------------------------------------------------------------------------------------------
