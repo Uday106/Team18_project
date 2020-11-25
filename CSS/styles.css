@@ -144,17 +144,20 @@ button:focus {
 }
 
 
-.img-container h2 {
+.img-container h1 {
     margin-bottom: 30px;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 .img-container p {
     width: 50%;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 .container {
     display: grid;
     grid-template-columns: 1fr;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 .container > div > h2 {
