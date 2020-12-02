@@ -48,6 +48,7 @@ body {
 .card-left {
     background: #A7C957;
 	background: linear-gradient(to right, #A7C950, #A7C957) no-repeat 0 0 / cover;
+	border-radius: 10px 0px 0px 10px;
     background-position: center;
     background-size: cover;
 	left: 0;
@@ -91,11 +92,36 @@ p {
 	margin-bottom: -25px;
 }
 @media only screen and (max-width: 800px) {
-	h1 {font-size: 1.5em;}
+	h1 { font-size: 1.5em; }
+	.card-left, .card-right {
+		padding-top: 25px;
+		width: 100%;
+		height: 50%;
+	}
+	.card-left {
+		border-radius: 10px 10px 0px 0px;
+	}
+	.card-right {
+		top: 50%;
+	}
+	#profile-img {
+		display: none;
+	}
 }
 
 /* iphone 5/SE height is 568 */
-@media only screen and (max-height: 568px) {
-	img {display: none;}
-	body {margin: 0;}
+@media only screen and (max-width: 480px) {
+	#container {
+		width: 95%;
+		min-height: 520px;
+		top: 12%;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	p { display: none; }
+
+	h1, button {
+		margin: 10px;
+	}
 }

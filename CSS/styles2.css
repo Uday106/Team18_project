@@ -437,7 +437,7 @@ a {
     visibility: hidden;
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 800px) {
     ul {display: none;}
     .menu { display: initial; }
     .grid-container {
@@ -447,6 +447,14 @@ a {
     #pop-up-background {
         height: 200vh;
     }
+
+    #pop-up-menu {
+        height: 300px;
+    }
     
     .buttons {left: -2%;}
+}
+
+@media only screen and (max-width: 400px) {
+    h5 { margin-left: 20px;}
 }
