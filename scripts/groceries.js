@@ -65,7 +65,7 @@ auth.onAuthStateChanged(function (user) {
             }  
         });
 
-        //real-time listener
+        //real-time listener, 
         db.collection('Grocery Store').doc(docID)
             .collection('comments')
             .onSnapshot(function (snapshot) {

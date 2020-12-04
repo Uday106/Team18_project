@@ -24,11 +24,11 @@ const home2 = document.querySelector('#home2');
 const profile2 = document.querySelector('#profile2');
 
 home.addEventListener('click', function (e) {
-    window.history.go(-1);
+    window.location = 'main.html';
 });
 
 home2.addEventListener('click', function (e) {
-    window.history.go(-1);
+    window.location = 'main.html';
 });
 
 // mobile-menu navigation
