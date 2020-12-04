@@ -1,13 +1,13 @@
 # Team18_project
 
 Top level of project folder: 
-├── .gitignore               # Git ignore file
-├── index.html               # Signup/Login page
-├── main.html                # landing HTML file, this is what users see when they are successfully logged in from index.html
-├── profile.html             # User's profile page where users can see upcoming reservations and their name, email, phone number
-├── restaurants.html         # Page where users can select a restaurant from the list of restaurants
-├── groceries.html           # Page where users can select a grocery shop from the list of grocery shops
-└── README.md
+    ├── .gitignore           # Git ignore file
+    ├── index.html           # Signup/Login page
+    ├── main.html            # landing HTML file, this is what users see when they are successfully logged in from index.html
+    ├── profile.html         # User's profile page where users can see upcoming reservations and their name, email, phone number
+    ├── restaurants.html     # Page where users can select a restaurant from the list of restaurants
+    ├── groceries.html       # Page where users can select a grocery shop from the list of grocery shops
+    └── README.md
 
 It has the following subfolders and files:
 ├── restaurants             # Folder for each restaurant
@@ -27,7 +27,7 @@ It has the following subfolders and files:
     /04.html                # the fourth grocery shop page where details of the fourth grocery shop is going to loaded
     /05.html                # the fifth grocery shop page where details of the fifth grocery shop is going to loaded
 
-├── images                  # Folder for images
+    ├── images              # Folder for images
     /groceryBanner.jpg      # banner image for groceries.html
     /hamburger.png          # menu button
     /logo.png               
