@@ -27,7 +27,7 @@ It has the following subfolders and files:
     /04.html                # the fourth grocery shop page where details of the fourth grocery shop is going to loaded
     /05.html                # the fifth grocery shop page where details of the fifth grocery shop is going to loaded
 
-├── images                  # Folder for images
+    ├── images              # Folder for images
     /groceryBanner.jpg      # banner image for groceries.html
     /hamburger.png          # menu button
     /logo.png               
